@@ -66,9 +66,7 @@ Schema.Post = new SimpleSchema({
     'comments.$.createdBy': {
         type: String,
         autoValue: function() {
-            if (this.isInsert) {
-                return this.userId
-            }
+            return this.userId
         }
     },
     'comments.$.createdAt': {
