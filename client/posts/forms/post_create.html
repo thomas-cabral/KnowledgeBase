@@ -1,0 +1,9 @@
+<template name="insertPostForm">
+    {{> quickForm collection="Posts" id="insertPostForm" omitFields="createdBy, comments, createdAt, score" type="insert"}}
+</template>
+<template name="updatePostForm">
+    {{> quickForm collection="Posts" doc=this id="updatePostForm" omitFields="createdBy, comments, createdAt, score" type="update"}}
+</template>
+<template name="commentsForm">
+    {{> quickForm id="updatePushForm" type="update-pushArray" omitFields="createdBy, createdAt" collection="Posts" doc=this scope="comments"}}
+</template>

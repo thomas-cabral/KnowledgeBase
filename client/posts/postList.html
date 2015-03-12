@@ -1,0 +1,15 @@
+<template name="postList">
+    {{#if currentUser}}
+        {{> insertPostForm}}
+    {{/if}}
+    <div class="list-group">
+    {{#each posts}}
+        <a class="list-group-item" href="{{pathFor "postDetail"}}">
+            {{title}} -
+            {{createdBy}} -
+            {{createdAt}} -
+            {{score}}
+        </a>
+    {{/each}}
+    </div>
+</template>

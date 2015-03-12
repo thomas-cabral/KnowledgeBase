@@ -1,0 +1,13 @@
+<template name="postDetail">
+    {{title}}
+    {{createdBy}}
+    {{#if isOwner}}
+    {{> updatePostForm}}
+    {{/if}}
+        <ul>
+    {{#each comments}}
+        {{> commentDetail}}
+    {{/each}}
+        </ul>
+    {{> commentsForm}}
+</template>
