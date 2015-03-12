@@ -66,13 +66,29 @@ Schema.Post = new SimpleSchema({
     'comments.$.createdBy': {
         type: String,
         autoValue: function() {
-            return this.userId
+            if (this.isInsert) {
+                return this.userId
+            }
         }
     },
     'comments.$.createdAt': {
         type: Date,
         autoValue: function() {
             return new Date;
+        }
+    },
+    'comments.$.replies': {
+        type: Array,
+        optional: true
+    },
+    'comments.$.replies.$': {
+        type: Object
+    },
+    'comments.$.replies.$.reply': {
+        type: String,
+        autoform: {
+            type: "textarea",
+            rows: 3
         }
     }
 });

@@ -9,3 +9,10 @@ Template.postDetail.helpers({
         return this.createdBy === Meteor.userId();
     }
 });
+
+Template.commentDetail.helpers({
+    author: function() {
+        return Meteor.users.findOne({_id: this.createdBy})
+    }
+});
+
