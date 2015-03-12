@@ -4,10 +4,11 @@
     {{#if isOwner}}
     {{> updatePostForm}}
     {{/if}}
-        <ul>
+    <h1 class="page-header">Comments</h1>
+    <div class="list-group">
     {{#each comments}}
         {{> commentDetail}}
     {{/each}}
-        </ul>
+    </div>
     {{> commentsForm}}
 </template>

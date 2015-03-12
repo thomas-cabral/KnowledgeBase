@@ -1,8 +1,9 @@
 <template name="commentDetail">
-<li>
+<li class="list-group-item">
     {{comment}}
-    {{author.username}}
-    {{createdBy}}
-    {{createdAt}}
+    <div class="pull-right">
+        user - {{author.username}}
+        {{createdAt}}
+    </div>
 </li>
 </template>
