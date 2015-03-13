@@ -10,6 +10,9 @@ Template.postList.helpers({
 Template.postDetail.helpers({
     isOwner: function () {
         return this.createdBy === Meteor.userId();
+    },
+    author: function() {
+        return Meteor.users.findOne({_id: this.createdBy})
     }
 });
 

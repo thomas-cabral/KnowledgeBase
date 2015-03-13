@@ -1,6 +1,10 @@
 <template name="postDetail">
-    {{title}}
-    {{createdBy}}
+    <div>
+        <h1 class="page-header">{{title}} <small class="pull-right">By - {{author.username}}</small></h1>
+    </div>
+    <div>
+        <p>{{body}}</p>
+    </div>
     {{#if isOwner}}
     {{> updatePostForm}}
     {{/if}}
