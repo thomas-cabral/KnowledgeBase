@@ -1,6 +1,9 @@
 Template.postList.helpers({
     posts: function () {
         return Posts.find({});
+    },
+    author: function() {
+        return Meteor.users.findOne({_id: this.createdBy})
     }
 });
 

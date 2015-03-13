@@ -5,10 +5,11 @@
     <div class="list-group">
     {{#each posts}}
         <a class="list-group-item" href="{{pathFor "postDetail"}}">
-            {{title}} -
-            {{createdBy}} -
-            {{createdAt}} -
-            {{score}}
+            {{title}}
+            <div class="pull-right bottom">
+            {{author.username}} -
+            {{createdAt}}
+            </div>
         </a>
     {{/each}}
     </div>
