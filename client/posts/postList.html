@@ -5,10 +5,14 @@
     <div class="list-group">
     {{#each posts}}
         <a class="list-group-item" href="{{pathFor "postDetail"}}">
-            {{title}}
+            <div class="list-group-item-heading">
+                <h4>{{title}}</h4>
+            </div>
             <div class="pull-right">
-            {{author.username}} -
-            {{createdAt}}
+                By - {{author.username}}
+            </div>
+            <div class="bottom-left">
+                Comments <span class="badge">{{comments.length}}</span>
             </div>
         </a>
     {{/each}}

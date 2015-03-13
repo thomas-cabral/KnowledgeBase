@@ -8,11 +8,13 @@
     {{#if isOwner}}
     {{> updatePostForm}}
     {{/if}}
-    <h1 class="page-header">Comments</h1>
+    <h1 class="page-header text-center">Comments</h1>
+<div class="col-lg-8 col-lg-offset-2">
     <div class="list-group">
-    {{#each comments}}
-        {{> commentDetail}}
-    {{/each}}
+        {{#each comments}}
+            {{> commentDetail}}
+        {{/each}}
     </div>
     {{> commentsForm}}
+</div>
 </template>
