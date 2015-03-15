@@ -1,7 +1,7 @@
 Posts = new Mongo.Collection("posts");
 Posts.attachSchema(Schema.Post);
 Posts.allow({
-    insert: function(userId, doc) {
+    insert: function(userId) {
         return !! userId;
     },
     update: function(userId, doc, fields, modifier) {
@@ -11,6 +11,17 @@ Posts.allow({
         else {
             return doc.createdBy === Meteor.userId();
         }
+    }
+});
+
+Chats = new Mongo.Collection("chats");
+Chats.attachSchema(Schema.Chat);
+Chats.allow({
+    insert: function() {
+        return true;
+    },
+    update: function() {
+        return true
     }
 });
 

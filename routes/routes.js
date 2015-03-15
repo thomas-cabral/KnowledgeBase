@@ -17,4 +17,15 @@ Router.map(function() {
             return Posts.findOne({_id: this.params._id})
         }
     });
+
+    this.route('chatList', {
+        path: '/chats'
+    });
+
+    this.route('chatDetail', {
+        path: '/chats/:_id',
+        data: function() {
+            return Chats.findOne({_id: this.params._id})
+        }
+    });
 });

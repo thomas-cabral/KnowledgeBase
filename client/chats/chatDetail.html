@@ -1,0 +1,16 @@
+<template name="chatDetail">
+    Chat with {{chatTarget}}
+    <div class="list-group">
+        {{#each messages}}
+            {{> messageDetail}}
+        {{/each}}
+    </div>
+
+    {{>messageForm}}
+</template>
+
+<template name="messageDetail">
+    <div class="list-group-item">
+        <p>{{message}} - {{author.username}}</p>
+    </div>
+</template>
