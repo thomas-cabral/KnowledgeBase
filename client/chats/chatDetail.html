@@ -11,6 +11,10 @@
 
 <template name="messageDetail">
     <div class="list-group-item">
-        <p>{{message}} - {{author.username}}</p>
+    <div class="media">
+        <div class="media-body">
+            <p>{{message}} <span class="pull-right">user - {{author.username}}</span></p>
+        </div>
+    </div>
     </div>
 </template>
