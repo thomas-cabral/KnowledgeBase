@@ -10,7 +10,7 @@
 </template>
 
 <template name="messageDetail">
-    <div class="list-group-item">
+    <div class="list-group-item {{#if myComment}}list-group-item-info{{/if}}">
     <div class="media">
         <div class="media-body">
             <p>{{message}} <span class="pull-right">user - {{author.username}}</span></p>
