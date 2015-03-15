@@ -1,9 +1,8 @@
 Template.chatList.helpers({
     chats: function() {
-        if (Meteor.userId()) {
-            return Chats.find({createdBy: Meteor.userId()})
+        if (!!Meteor.userId()) {
+            return Chats.find({creator: Meteor.userId()})
         }
-
     }
 });
 
