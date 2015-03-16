@@ -5,12 +5,12 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 aldeed:collection2
 aldeed:autoform
 accounts-password
 iron:router
 twbs:bootstrap
 aldeed:simple-schema
-ian:accounts-ui-bootstrap-3
 underscore
+joshowens:accounts-entry
+ian:accounts-ui-bootstrap-3
