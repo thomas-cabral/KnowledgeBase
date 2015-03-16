@@ -2,7 +2,7 @@
     {{> quickForm collection="Posts" id="insertPostForm" omitFields="createdBy, comments, createdAt, score" type="insert"}}
 </template>
 <template name="updatePostForm">
-    {{> quickForm collection="Posts" doc=this id="updatePostForm" omitFields="createdBy, comments, createdAt, score" type="update"}}
+    {{> quickForm collection="Posts" doc=this id="updatePostForm" omitFields="createdBy, comments, createdAt, updatedAt, score" type="update"}}
 </template>
 <template name="commentsForm">
     {{> quickForm id="updatePushForm" type="update-pushArray" omitFields="createdBy, replies, createdAt" collection="Posts" doc=this scope="comments"}}
