@@ -6,14 +6,28 @@ Template.chatList.helpers({
     },
     chatTo: function() {
         if (!!Meteor.userId()) {
-            return Meteor.users.findOne({_id: this.chatTarget})
+            if (this.chatTarget === Meteor.userId()) {
+                return Meteor.users.findOne({_id: this.creator})
+            } else {
+                return Meteor.users.findOne({_id: this.chatTarget});
+            }
         }
     }
 });
 
 Template.chatDetail.helpers({
     chatTo: function() {
-        return Meteor.users.findOne({_id: this.chatTarget})
+        if (this.chatTarget === Meteor.userId()) {
+            return Meteor.users.findOne({_id: this.creator})
+        } else {
+            return Meteor.users.findOne({_id: this.chatTarget});
+        }
+    }
+});
+
+Template.chatDetail.events({
+    "click .toggle-archive": function () {
+        Meteor.call("archiveChat", this._id, ! this.archive);
     }
 });
 

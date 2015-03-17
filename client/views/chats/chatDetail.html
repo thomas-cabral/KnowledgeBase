@@ -1,11 +1,18 @@
 <template name="chatDetail">
-    Chatting with {{chatTo.username}}
+    <div>Chatting with {{chatTo.username}}<span class="pull-right">    <button class="toggle-archive btn btn-default">
+        {{#if archive}}
+            Reopen
+        {{else}}
+            Archive
+        {{/if}}
+    </button></span> </div>
     <div class="list-group">
         {{#each messages}}
             {{> messageDetail}}
         {{/each}}
     </div>
     {{>messageForm}}
+
 </template>
 
 <template name="messageDetail">

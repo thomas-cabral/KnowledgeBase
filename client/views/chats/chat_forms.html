@@ -1,5 +1,5 @@
 <template name="createChatForm">
-    {{> quickForm collection="Chats" id="insertChatForm" omitFields="creator, createdAt, messages, message" type="insert"}}
+    {{> quickForm collection="Chats" id="insertChatForm" omitFields="creator, createdAt, messages, message, archive" type="insert"}}
 </template>
 <template name="messageForm">
     {{> quickForm collection="Chats" id="updatePushForm" type="update-pushArray" omitFields="createdBy, createdAt" doc=this scope="messages"}}

@@ -33,6 +33,9 @@
                             {{#each chats}}
                                 {{>chatMenu}}
                             {{/each}}
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Chat Home</li>
+                            <li><a href="{{pathFor 'chatList'}}">Start Chat</a></li>
                         </ul>
                     </li>
                     {{> loginButtons}}

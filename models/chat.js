@@ -17,12 +17,16 @@ Schema.Chat = new SimpleSchema({
                         return;
 
                     options.push({
-                        label: element.username, value: element._id
+                        label: ((element.username) ? element.username : element.profile.name), value: element._id
                     })
                 });
                 return options;
             }
         }
+    },
+    archive: {
+        type: Boolean,
+        defaultValue: false
     },
     messages: {
         type: Array,

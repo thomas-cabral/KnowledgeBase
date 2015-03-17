@@ -8,9 +8,12 @@ Template.registerHelper('formatDateTime', function(date) {
 
 Template.menu.helpers({
     chatUnread: function() {
-        return Chats.find().count()
+        if (Chats.find({archive: false}).count() < 1) {
+            return false;
+        }
+        return Chats.find({archive: false}).count()
     },
     chats: function() {
-        return Chats.find();
+        return Chats.find({archive: false});
     }
 });
