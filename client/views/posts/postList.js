@@ -21,4 +21,3 @@ Template.commentDetail.helpers({
         return Meteor.users.findOne({_id: this.createdBy})
     }
 });
-

@@ -2,7 +2,9 @@
 <li class="list-group-item">
     <div class="list-group-item-heading">
         {{comment}}
-        <div class="pull-right"><strong>user - {{author.username}}</strong></div>
+        <div class="pull-right"><strong>user - {{author.username}}</strong><br>
+            <p>{{formatDateTime createdAt}}</p>
+        </div>
     </div>
 </li>
 </template>

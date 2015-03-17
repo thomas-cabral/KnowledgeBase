@@ -1,6 +1,6 @@
 <template name="postDetail">
     <div>
-        <h1 class="page-header">{{title}} <small class="pull-right">By - {{author.username}}</small></h1>
+        <h1 class="page-header">{{title}} <small class="pull-right">{{author.username}} {{formatDate createdAt}}</small></h1>
     </div>
     <div>
         <p>{{body}}</p>
