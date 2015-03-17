@@ -1,6 +1,6 @@
 <template name="chatList">
     {{#each chats}}
-        <a href="{{pathFor 'chatDetail'}}">{{chatTarget}}</a>
+        Chat with <a href="{{pathFor 'chatDetail'}}"> {{chatTo.username}}</a>
     {{/each}}
     <h3>Create Chat</h3>
     {{>createChatForm}}

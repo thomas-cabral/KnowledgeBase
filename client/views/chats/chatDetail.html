@@ -1,11 +1,10 @@
 <template name="chatDetail">
-    Chat with {{chatTarget}}
+    Chatting with {{chatTo.username}}
     <div class="list-group">
         {{#each messages}}
             {{> messageDetail}}
         {{/each}}
     </div>
-
     {{>messageForm}}
 </template>
 
@@ -13,7 +12,8 @@
     <div class="list-group-item {{#if myComment}}list-group-item-info{{/if}}">
     <div class="media">
         <div class="media-body">
-            <p>{{message}} <span class="pull-right">user - {{author.username}}</span></p>
+            {{message}} <div class="pull-right"><strong>user - {{author.username}}</strong><br>
+            <p>{{formatDateTime createdAt}}</p></div>
         </div>
     </div>
     </div>

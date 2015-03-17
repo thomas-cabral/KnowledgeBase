@@ -3,6 +3,17 @@ Template.chatList.helpers({
         if (!!Meteor.userId()) {
             return Chats.find({creator: Meteor.userId()})
         }
+    },
+    chatTo: function() {
+        if (!!Meteor.userId()) {
+            return Meteor.users.findOne({_id: this.chatTarget})
+        }
+    }
+});
+
+Template.chatDetail.helpers({
+    chatTo: function() {
+        return Meteor.users.findOne({_id: this.chatTarget})
     }
 });
 
