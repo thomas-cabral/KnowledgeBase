@@ -1,7 +1,7 @@
 Template.chatList.helpers({
     chats: function() {
         if (!!Meteor.userId()) {
-            return Chats.find({creator: Meteor.userId()})
+            return Chats.find()
         }
     },
     chatTo: function() {
@@ -24,6 +24,16 @@ Template.messageDetail.helpers({
     myComment: function() {
         if (this.createdBy === Meteor.userId()){
             return true;
+        }
+    }
+});
+
+Template.chatMenu.helpers({
+    chatWith: function() {
+        if (this.chatTarget === Meteor.userId()) {
+            return Meteor.users.findOne({_id: this.creator})
+        } else {
+            return Meteor.users.findOne({_id: this.chatTarget});
         }
     }
 });
