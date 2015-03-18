@@ -1,5 +1,5 @@
 <template name="chatDetail">
-    <div>Chatting with {{chatTo.username}}<span class="pull-right">    <button class="toggle-archive btn btn-default">
+    <div>Chatting with {{#unless chatTo.username}}{{chatTo.profile.name}}{{/unless}} {{chatTo.username}}<span class="pull-right">    <button class="toggle-archive btn btn-default">
         {{#if archive}}
             Reopen
         {{else}}
