@@ -9,7 +9,7 @@
                 <h4>{{title}}</h4>
             </div>
             <div class="pull-right">
-                By - {{author.username}}
+                By - {{#unless author.username}}{{author.profile.name}}{{/unless}}{{author.username}}
             </div>
             <div class="bottom-left">
                 Comments <span class="badge">{{comments.length}}</span>
