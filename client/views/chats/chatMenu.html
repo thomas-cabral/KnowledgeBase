@@ -1,3 +1,4 @@
 <template name="chatMenu">
-    <li><a href="{{pathFor 'chatDetail'}}">{{chatWith.username}} <span class="badge">{{unreadCount}}</span> </a></li>
+    <li><a href="{{pathFor 'chatDetail'}}">{{#unless chatWith.username}}{{chatWith.profile.name}}{{/unless}}
+        {{chatWith.username}} <span class="badge">{{unreadCount}}</span> </a></li>
 </template>
