@@ -1,11 +1,12 @@
 <template name="chatDetail">
-    <div>Chatting with {{#unless chatTo.username}}{{chatTo.profile.name}}{{/unless}} {{chatTo.username}}<span class="pull-right">    <button class="toggle-archive btn btn-default">
+    <div class="page-header">Chatting with {{#unless chatTo.username}}{{chatTo.profile.name}}{{/unless}} {{chatTo.username}}<span class="pull-right">    <button class="toggle-archive btn btn-default">
         {{#if archive}}
             Reopen
         {{else}}
             Archive
         {{/if}}
-    </button></span> </div>
+    </button></span>
+    </div>
     <div class="list-group">
         {{#each messages}}
             {{> messageDetail}}
