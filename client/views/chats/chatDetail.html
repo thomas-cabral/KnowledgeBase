@@ -19,6 +19,9 @@
 <template name="messageDetail">
     <div class="list-group-item {{#if myComment}}list-group-item-info{{/if}}">
     <div class="media">
+        <div class="media-left">
+        <img class="media-object img-circle" width="65" src="{{profileImage author._id}}">
+        </div>
         <div class="media-body">
             {{message}} <div class="pull-right"><strong>{{#unless author.username}}{{author.profile.name}}{{/unless}}
             {{author.username}}</strong><br>
