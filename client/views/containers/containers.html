@@ -1,0 +1,8 @@
+<template name="containerList">
+    <ul>
+    {{#each containers}}
+        <li><a href="{{pathFor 'containerDetail'}}">{{title}}</a> </li>
+    {{/each}}
+    </ul>
+    {{>createContainerForm}}
+</template>

@@ -27,6 +27,14 @@ Chats.allow({
 
 Containers = new Mongo.Collection("containers");
 Containers.attachSchema(Schema.Container);
+Containers.allow({
+    insert: function() {
+        return true;
+    },
+    update: function() {
+        return true
+    }
+});
 
 Comments = new Mongo.Collection("comments");
 Comments.attachSchema(Schema.Comment);

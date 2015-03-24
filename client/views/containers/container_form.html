@@ -1,0 +1,6 @@
+<template name="createContainerForm">
+    {{> quickForm collection="Containers" id="createContainerForm" omitFields="members" type="insert"}}
+</template>
+<template name="updateMembersForm">
+    {{> quickForm collection="Containers" id="updatePushForm" type="update-pushArray" doc=this scope="members"}}
+</template>

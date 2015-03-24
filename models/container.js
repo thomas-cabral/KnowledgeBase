@@ -3,7 +3,28 @@ Schema.Container = new SimpleSchema({
         type: String,
         label: "Name"
     },
-    users: {
-        type: [Schema.User]
+    members: {
+        type: Array,
+        optional: true
+    },
+    'members.$': {
+        type: Object
+    },
+    'members.$.member': {
+        type: String,
+        autoform: {
+            options: function () {
+                var options = [];
+                Meteor.users.find().forEach(function (element) {
+                    if (element._id == Meteor.userId())
+                        return;
+
+                    options.push({
+                        label: ((element.username) ? element.username : element.profile.name), value: element._id
+                    })
+                });
+                return options;
+            }
+        }
     }
 });

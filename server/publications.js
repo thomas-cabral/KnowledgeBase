@@ -18,3 +18,7 @@ Meteor.publish('chats', function() {
         ]
     });
 });
+
+Meteor.publish('containers', function() {
+    return Containers.find({});
+});

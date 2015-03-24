@@ -43,4 +43,15 @@ Router.map(function() {
             AccountsEntry.signInRequired(this);
         }
     });
+
+    this.route('containerList', {
+        path: '/containers'
+    });
+
+    this.route('containerDetail', {
+        path: '/containers/:_id',
+        data: function() {
+            return Containers.findOne({_id: this.params._id})
+        }
+    });
 });
