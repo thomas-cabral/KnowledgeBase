@@ -8,7 +8,7 @@ Posts.allow({
         if (modifier["$push"] && modifier["$push"].comments) {
             return !! userId; // don't deny this
         }
-        else if (modifier["$set"] && modifier["$set"].score) {
+        else if (modifier["$set"] && fields["0"] === "score") {
             return !! userId; // don't deny this
         }
         else {
