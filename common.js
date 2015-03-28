@@ -8,6 +8,9 @@ Posts.allow({
         if (modifier["$push"] && modifier["$push"].comments) {
             return !! userId; // don't deny this
         }
+        else if (modifier["$set"] && modifier["$set"].score) {
+            return !! userId; // don't deny this
+        }
         else {
             return doc.createdBy === Meteor.userId();
         }
