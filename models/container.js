@@ -16,7 +16,7 @@ Schema.Container = new SimpleSchema({
             options: function () {
                 var options = [];
                 Meteor.users.find().forEach(function (element) {
-                    if (element._id == Meteor.userId())
+                    if (element._id == Meteor.userId() || element._id == this.member)
                         return;
 
                     options.push({

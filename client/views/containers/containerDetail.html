@@ -1,4 +1,7 @@
 <template name="containerDetail">
     {{title}}
+        {{#each members}}
+            {{member}}
+        {{/each}}
     {{>updateMembersForm}}
 </template>

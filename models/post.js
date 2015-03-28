@@ -74,20 +74,6 @@ Schema.Post = new SimpleSchema({
         autoValue: function() {
             return new Date;
         }
-    },
-    'comments.$.replies': {
-        type: Array,
-        optional: true
-    },
-    'comments.$.replies.$': {
-        type: Object
-    },
-    'comments.$.replies.$.reply': {
-        type: String,
-        autoform: {
-            type: "textarea",
-            rows: 3
-        }
     }
 });
 

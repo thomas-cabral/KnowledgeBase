@@ -27,6 +27,10 @@ Router.map(function() {
         }
     });
 
+    this.route('newPost', {
+        path: '/post/new/'
+    });
+
     this.route('chatList', {
         path: '/chats',
         onBeforeAction: function () {

@@ -1,20 +1,31 @@
 <template name="postList">
     {{#if currentUser}}
-        {{> insertPostForm}}
+        <a class="btn btn-primary" href="{{pathFor "newPost"}}">New Post</a>
     {{/if}}
     <div class="list-group">
-    {{#each posts}}
-        <a class="list-group-item" href="{{pathFor "postDetail"}}">
+        {{#each posts}}
+            {{> postListItem}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="postListItem">
+    <div class="media well well-sm">
+        <div class="media-left">
+            <a id="upvote"><i class="fa fa-2x fa-sort-asc fa-stack"></i></a>
+                {{score}}
+            <a id="downvote"><i class="fa fa-2x fa-sort-desc fa-stack"></i></a>
+        </div>
+        <a class="media-body" href="{{pathFor "postDetail"}}">
             <div class="list-group-item-heading">
                 <h4>{{title}}</h4>
             </div>
             <div class="pull-right">
                 By - {{#unless author.username}}{{author.profile.name}}{{/unless}}{{author.username}}
             </div>
-            <div class="bottom-left">
+            <div class="media-bottom">
                 Comments <span class="badge">{{comments.length}}</span>
             </div>
         </a>
-    {{/each}}
     </div>
 </template>
