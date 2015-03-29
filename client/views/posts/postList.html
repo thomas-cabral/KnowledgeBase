@@ -1,6 +1,6 @@
 <template name="postList">
     {{#if currentUser}}
-        <a class="btn btn-primary" href="{{pathFor "newPost"}}">New Post</a>
+        <a class="btn btn-primary" href="{{pathFor "insertPostForm"}}">New Post</a>
     {{/if}}
     <div class="list-group">
         {{#each posts}}
