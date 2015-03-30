@@ -1,11 +1,15 @@
 <template name="postList">
     {{#if currentUser}}
-        <a class="btn btn-primary" href="{{pathFor "insertPostForm"}}">New Post</a>
+        <a class="btn btn-primary pull-right" href="{{pathFor "newPost"}}">New Post</a>
     {{/if}}
-    <div class="list-group">
-        {{#each posts}}
-            {{> postListItem}}
-        {{/each}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="list-group">
+                {{#each posts}}
+                    {{> postListItem}}
+                {{/each}}
+            </div>
+        </div>
     </div>
 </template>
 

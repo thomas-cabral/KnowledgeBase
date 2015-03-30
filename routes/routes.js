@@ -27,7 +27,7 @@ Router.map(function() {
         }
     });
 
-    this.route('insertPostForm', {
+    this.route('newPost', {
         path: '/post/new/'
     });
 

@@ -6,8 +6,7 @@ Template.postList.helpers({
 
 Template.postList.events({
     "click #addPost": function() {
-        var newPost = true;
-        return newPost
+        return true;
     }
 });
 
@@ -38,5 +37,11 @@ Template.postDetail.helpers({
 Template.commentDetail.helpers({
     author: function() {
         return Meteor.users.findOne({_id: this.createdBy})
+    }
+});
+
+Template.newPost.helpers({
+    posts: function() {
+        return Posts.find({}, {limit: 5})
     }
 });

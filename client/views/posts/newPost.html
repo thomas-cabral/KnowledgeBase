@@ -1,0 +1,19 @@
+<template name="newPost">
+    {{>insertPostForm}}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Recent Posts
+            </h1>
+            <div class="list-group">
+            {{#each posts}}
+              {{>postListBasic}}
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="postListBasic">
+    <a class="list-group-item" href="{{pathFor "postDetail"}}">{{title}}</a>
+</template>
