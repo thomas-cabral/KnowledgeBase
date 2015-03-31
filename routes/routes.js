@@ -1,5 +1,6 @@
 Router.configure({
-    layoutTemplate: 'base'
+    layoutTemplate: 'base',
+    loadingTemplate: 'loading'
 });
 
 Router.map(function() {
